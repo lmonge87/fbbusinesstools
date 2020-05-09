@@ -40,15 +40,15 @@ export default function JSONParser() {
     }
   };
 
-//   {strings.map(str => <tr><td>{str}</td></tr>)}
+  const mapped =
+    fetchedData &&
+    fetchedData.data.map((i) => [
+      [{ interests: [{ id: i.id, name: i.name }] }],
+      { audience: i.audience_size },
+    ]);
 
-  const mapped = fetchedData && fetchedData.data.map((i) => [[
-    { interests: [{ id: i.id, name: i.name }] },
-  ],{audience:i.audience_size}]);
-
-  const strings = mapped && mapped.map((obj) => [JSON.stringify(obj[0]), obj[1].audience]);
-
-  console.log(strings)
+  const strings =
+    mapped && mapped.map((obj) => [JSON.stringify(obj[0]), obj[1].audience]);
 
   return (
     <Container className="mt-5">
@@ -93,7 +93,13 @@ export default function JSONParser() {
             </tr>
           </thead>
           <tbody>
-          {strings && strings.map((str, index) => <tr key={index}><td>{str[0]}</td><td>{str[1]}</td></tr>)}
+            {strings &&
+              strings.map((str, index) => (
+                <tr key={index}>
+                  <td>{str[0]}</td>
+                  <td>{str[1]}</td>
+                </tr>
+              ))}
           </tbody>
         </Table>
       </Row>
