@@ -44,11 +44,12 @@ export default function JSONParser() {
     fetchedData &&
     fetchedData.data.map((i) => [
       [{ interests: [{ id: i.id, name: i.name }] }],
+      { name: i.name},
       { audience: i.audience_size },
     ]);
 
   const strings =
-    mapped && mapped.map((obj) => [JSON.stringify(obj[0]), obj[1].audience]);
+    mapped && mapped.map((obj) => [JSON.stringify(obj[0]), obj[1].name, obj[2].audience]);
 
   return (
     <Container className="mt-5">
@@ -89,6 +90,7 @@ export default function JSONParser() {
           <thead>
             <tr>
               <th>ID/Name</th>
+              <th>Name</th>
               <th>Audience</th>
             </tr>
           </thead>
@@ -98,6 +100,7 @@ export default function JSONParser() {
                 <tr key={index}>
                   <td>{str[0]}</td>
                   <td>{str[1]}</td>
+                  <td>{str[2]}</td>
                 </tr>
               ))}
           </tbody>
