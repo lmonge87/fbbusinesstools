@@ -1,3 +1,3 @@
-# LMParser
+# FbAPIConnect
 
-Used to pull and parse some data from Facebook analytics, takes a filter attribute and the auth key and displays information in a very specific format for my need.
+Used to pull data from Facebook business using FBs Graph API
