@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/FbAPIConnect/precache-manifest.7c0ded2713390f21414ed8e90310f77d.js"
+  "/FbAPIConnect/precache-manifest.e882242949d201b457615afbd5a1063c.js"
 );
 
 self.addEventListener('message', (event) => {
