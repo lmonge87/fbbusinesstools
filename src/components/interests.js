@@ -18,7 +18,7 @@ export default function InterestFinder(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFetchedData(await dataCall(interest));
-    setInterest('')
+    setInterest("");
   };
 
   const handleClear = () => {
@@ -33,7 +33,7 @@ export default function InterestFinder(props) {
       );
       return response.data.data;
     } catch (err) {
-        setShowError(true);
+      setShowError(true);
     }
   };
 
@@ -78,11 +78,7 @@ export default function InterestFinder(props) {
                 </Button>
               </Col>
               <Col xs="auto">
-                <Button
-                  variant="danger"
-                  className="mb-2"
-                  onClick={handleClear}
-                >
+                <Button variant="danger" className="mb-2" onClick={handleClear}>
                   Clear
                 </Button>
               </Col>
@@ -99,25 +95,27 @@ export default function InterestFinder(props) {
       </Row>
       <Row>
         <Col>
-          <Table responsive striped bordered hover variant="dark">
-            <thead>
-              <tr>
-                <th>ID/Name</th>
-                <th>Name</th>
-                <th>Audience</th>
-              </tr>
-            </thead>
-            <tbody>
-              {strings &&
-                strings.map((str) => (
-                  <tr key={uuidv4()}>
-                    <td>{str[0]}</td>
-                    <td>{str[1]}</td>
-                    <td>{str[2]}</td>
-                  </tr>
-                ))}
-            </tbody>
-          </Table>
+          {fetchedData && (
+            <Table responsive striped bordered hover variant="dark">
+              <thead>
+                <tr>
+                  <th>ID/Name</th>
+                  <th>Name</th>
+                  <th>Audience</th>
+                </tr>
+              </thead>
+              <tbody>
+                {strings &&
+                  strings.map((str) => (
+                    <tr key={uuidv4()}>
+                      <td>{str[0]}</td>
+                      <td>{str[1]}</td>
+                      <td>{str[2]}</td>
+                    </tr>
+                  ))}
+              </tbody>
+            </Table>
+          )}
         </Col>
       </Row>
       {showError && (
