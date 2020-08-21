@@ -70,7 +70,7 @@ export default function InputForm(props) {
   return (
     <>
       <Row className="mt-3">
-        <Col xs="6">
+        <Col xs="4">
           <Form onSubmit={handleSubmit}>
             <Form.Row className="align-items-center">
               <Col>
