@@ -10,6 +10,7 @@ import ErrorModal from "./components/errorModal.js";
 import InterestFinder from "./tabs/interests.js";
 import ImageFinder from "./tabs/images.js";
 import AssociatedImages from "./tabs/usedImages.js";
+import Campaigns from "./tabs/campaigns.js";
 import axios from "axios";
 
 export default function FbAPIConnect() {
@@ -90,12 +91,12 @@ export default function FbAPIConnect() {
   return (
     <>
       <Container fluid className="mt-3">
-        <Row>
+        <Row className='mb-3'>
           <Col xs={{ span: 4, offset: 8 }}>
             {showFBButton ? (
               <div
                 className="fb-login-button"
-                data-size="medium"
+                data-size="small"
                 data-button-type="login_with"
                 data-layout="rounded"
                 data-auto-logout-link="false"
@@ -119,6 +120,12 @@ export default function FbAPIConnect() {
           </Tab>
           <Tab eventKey="used" title="Assets in Use">
             <AssociatedImages
+              accessToken={accessToken}
+              selectOptions={businessAdAccounts}
+            />
+          </Tab>
+          <Tab eventKey="campaigns" title="Campaigns">
+            <Campaigns
               accessToken={accessToken}
               selectOptions={businessAdAccounts}
             />

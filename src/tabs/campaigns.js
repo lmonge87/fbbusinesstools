@@ -4,37 +4,28 @@ import Col from "react-bootstrap/Col";
 import DataTable from "../components/table.js";
 import InputForm from "../components/form.js";
 
-const mapData = (data) =>
-  data &&
-  data.map((i) => ({
-    interests: `"interests":[{"id":"${i.id}","name":"${i.name}"}]}`,
-    name: i.name,
-    audience: i.audience_size,
-  }));
-
-export default function InterestFinder() {
+export default function ImageFinder(props) {
   const [fetchedData, setFetchedData] = useState("");
-  const mappedFetched = useMemo(() => mapData(fetchedData), [fetchedData]);
-  const [inputLabel, setInputLabel] = useState("Images");
+  const [inputLabel, setInputLabel] = useState("Campaigns");
 
   const columns = useMemo(
     () => [
       {
-        Header: `Showing results for interest: ${inputLabel}`,
+        Header: inputLabel,
         columns: [
           {
-            Header: "ID/Name",
-            accessor: "interests",
-            disableFilters: true,
-          },
-          {
-            Header: "Name",
+            Header: "Campaign Name",
             accessor: "name",
             disableFilters: true,
           },
           {
-            Header: "Audience",
-            accessor: "audience",
+            Header: "Campaign ID",
+            accessor: "id",
+            disableFilters: true,
+          },
+          {
+            Header: "Status",
+            accessor: "status",
             disableFilters: true,
           },
         ],
@@ -46,13 +37,16 @@ export default function InterestFinder() {
   return (
     <>
       <InputForm
-        dataType="interests"
+        searchFields={"status,name"}
+        dataType="campaigns"
+        variant="select"
         dataSetter={setFetchedData}
         labelSetter={setInputLabel}
+        selectOptions={props.selectOptions}
       />
       <Row>
         <Col>
-          {fetchedData && <DataTable columns={columns} data={mappedFetched} />}
+          {fetchedData && <DataTable columns={columns} data={fetchedData} />}
         </Col>
       </Row>
     </>

@@ -44,7 +44,7 @@ export default function AssociatedImages(props) {
           "id,name,url,is_associated_creatives_in_adgroups,created_time,updated_time"
         }
         dataType="images"
-        formType="select"
+        variant="select"
         dataSetter={setFetchedData}
         labelSetter={setInputLabel}
         selectOptions={props.selectOptions}

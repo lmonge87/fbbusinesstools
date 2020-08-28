@@ -39,7 +39,7 @@ export default function ImageFinder(props) {
       <InputForm
         searchFields={"name,id,hash"}
         dataType="images"
-        formType="select"
+        variant="select"
         dataSetter={setFetchedData}
         labelSetter={setInputLabel}
         selectOptions={props.selectOptions}

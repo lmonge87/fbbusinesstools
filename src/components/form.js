@@ -9,7 +9,7 @@ import axios from "axios";
 
 export default function InputForm(props) {
   const {
-    formType,
+    variant,
     dataType,
     searchFields,
     dataSetter,
@@ -23,6 +23,12 @@ export default function InputForm(props) {
   const { error, token } = useContext(GlobalContext);
   const [, setErrorState] = error;
   const [accessToken] = token;
+
+  const dataRoutes = {
+    interests: `https://graph.facebook.com/search?type=adinterest&q=[${userInput}]&limit=10000&locale=en_US&access_token=${accessToken}`,
+    images: `https://graph.facebook.com/v8.0/${userInput}/adimages?fields=${searchFields}&limit=1000&access_token=${accessToken}`,
+    campaigns: `https://graph.facebook.com/v8.0/${userInput}/campaigns?fields=${searchFields}&limit=1000&access_token=${accessToken}`,
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,11 +59,7 @@ export default function InputForm(props) {
 
   const dataCall = async () => {
     try {
-      const response = await axios.get(
-        dataType === "interests"
-          ? `https://graph.facebook.com/search?type=adinterest&q=[${userInput}]&limit=10000&locale=en_US&access_token=${accessToken}`
-          : `https://graph.facebook.com/v8.0/${userInput}/adimages?fields=${searchFields}&limit=1000&access_token=${accessToken}`
-      );
+      const response = await axios.get(dataRoutes[dataType]);
       if (!response.data.data.length) {
         setNoResults(true);
       }
@@ -70,21 +72,12 @@ export default function InputForm(props) {
   return (
     <>
       <Row className="mt-3">
-        <Col xs="4">
+        <Col md="4" xs="12">
           <Form onSubmit={handleSubmit}>
             <Form.Row className="align-items-center">
               <Col>
                 <Form.Label srOnly />
-                {formType === "text" ? (
-                  <Form.Control
-                    className="mb-2"
-                    type="text"
-                    placeholder="Ad Interest"
-                    name="interest"
-                    value={userInput || ""}
-                    onChange={handleChangeText}
-                  />
-                ) : (
+                {variant === "select" ? (
                   <Form.Control
                     className="mb-2"
                     as="select"
@@ -101,6 +94,15 @@ export default function InputForm(props) {
                         </option>
                       ))}
                   </Form.Control>
+                ) : (
+                  <Form.Control
+                    className="mb-2"
+                    type="text"
+                    placeholder="Ad Interest"
+                    name="interest"
+                    value={userInput || ""}
+                    onChange={handleChangeText}
+                  />
                 )}
               </Col>
               <Col xs="auto">
