@@ -10,7 +10,7 @@ import ErrorModal from "./components/errorModal.js";
 import InterestFinder from "./tabs/interests.js";
 import ImageFinder from "./tabs/images.js";
 import AssociatedImages from "./tabs/usedImages.js";
-import Campaigns from "./tabs/campaigns.js";
+import CampaignFinder from "./tabs/campaigns.js";
 import axios from "axios";
 
 export default function FbAPIConnect() {
@@ -125,7 +125,7 @@ export default function FbAPIConnect() {
             />
           </Tab>
           <Tab eventKey="campaigns" title="Campaigns">
-            <Campaigns
+            <CampaignFinder
               accessToken={accessToken}
               selectOptions={businessAdAccounts}
             />

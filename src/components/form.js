@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useMemo } from "react";
 import { GlobalContext } from "../App.js";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,6 +6,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Badge from "react-bootstrap/Badge";
 import axios from "axios";
+
+const formatPushRoutes = (data, accessToken) =>
+  data &&
+  data.map(
+    (i) =>
+      `https://graph.facebook.com/v8.0/${i.id}?status=${i.status}&access_token=${accessToken}`
+  );
 
 export default function InputForm(props) {
   const {
@@ -15,6 +22,10 @@ export default function InputForm(props) {
     dataSetter,
     labelSetter,
     selectOptions,
+    savingRoutes,
+    savedStatus,
+    setSavedStatus,
+    setEditedRow,
   } = props;
 
   const [userInput, setUserInput] = useState(undefined);
@@ -23,6 +34,11 @@ export default function InputForm(props) {
   const { error, token } = useContext(GlobalContext);
   const [, setErrorState] = error;
   const [accessToken] = token;
+
+  const formattedRoutes = useMemo(
+    () => formatPushRoutes(savingRoutes, accessToken),
+    [savingRoutes, accessToken]
+  );
 
   const dataRoutes = {
     interests: `https://graph.facebook.com/search?type=adinterest&q=[${userInput}]&limit=10000&locale=en_US&access_token=${accessToken}`,
@@ -43,6 +59,8 @@ export default function InputForm(props) {
     setErrorState(false);
     dataSetter([]);
     setNoResults(false);
+    setEditedRow([])
+    setSavedStatus(false);
   };
 
   const handleChangeText = (e) => {
@@ -55,27 +73,44 @@ export default function InputForm(props) {
     let option = e.nativeEvent.target.selectedIndex;
     labelSetter(e.nativeEvent.target[option].text);
     dataSetter(undefined);
+    setEditedRow([])
+    setSavedStatus(false);
+  };
+
+  const handleSave = () => {
+    saveData(formattedRoutes);
+    setSavedStatus(true);
   };
 
   const dataCall = async () => {
     try {
       const response = await axios.get(dataRoutes[dataType]);
-      if (!response.data.data.length) {
-        setNoResults(true);
-      }
+      !response.data.data.length ? setNoResults(true) : setNoResults(false);
       return response.data.data;
     } catch (err) {
       setErrorState(true);
     }
   };
 
+  const dataPush = async (route) => {
+    try {
+      await axios.post(route);
+    } catch (err) {
+      setErrorState(true);
+    }
+  };
+
+  const saveData = (data) => {
+    data && data.forEach((i) => dataPush(i));
+  };
+
   return (
     <>
       <Row className="mt-3">
-        <Col md="4" xs="12">
+        <Col xs="12">
           <Form onSubmit={handleSubmit}>
             <Form.Row className="align-items-center">
-              <Col>
+              <Col md="4" xs="auto">
                 <Form.Label srOnly />
                 {variant === "select" ? (
                   <Form.Control
@@ -116,14 +151,29 @@ export default function InputForm(props) {
                 </Button>
               </Col>
               {noResults && (
-                <Col>
+                <Col xs="auto">
                   <h4>
-                    <Badge display={false} variant="danger">
-                      No Results
-                    </Badge>
+                    <Badge variant="danger">No Results</Badge>
                   </h4>
                 </Col>
               )}
+              {formattedRoutes && formattedRoutes.length ? (
+                <Col xs="auto" lg={{ span: "auto", offset: "5" }}>
+                  {savedStatus ? (
+                    <Button variant="success" className="mb-2">
+                      Saved!
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="info"
+                      className="mb-2"
+                      onClick={handleSave}
+                    >
+                      Save
+                    </Button>
+                  )}
+                </Col>
+              ) : null}
             </Form.Row>
           </Form>
         </Col>

@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react";
 import FbAPIConnect from "./main.js";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
 
 export const GlobalContext = createContext();
 

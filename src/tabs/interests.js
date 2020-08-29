@@ -10,6 +10,7 @@ const mapData = (data) =>
     interests: `"interests":[{"id":"${i.id}","name":"${i.name}"}]}`,
     name: i.name,
     audience: i.audience_size,
+    id: i.id,
   }));
 
 export default function InterestFinder() {
@@ -17,31 +18,30 @@ export default function InterestFinder() {
   const mappedFetched = useMemo(() => mapData(fetchedData), [fetchedData]);
   const [inputLabel, setInputLabel] = useState("Images");
 
-  const columns = useMemo(
-    () => [
+  const columns = [
       {
-        Header: `Showing results for interest: ${inputLabel}`,
-        columns: [
-          {
-            Header: "ID/Name",
-            accessor: "interests",
-            disableFilters: true,
-          },
-          {
-            Header: "Name",
-            accessor: "name",
-            disableFilters: true,
-          },
-          {
-            Header: "Audience",
-            accessor: "audience",
-            disableFilters: true,
-          },
-        ],
+        text: "ID/Name",
+        dataField: "interests",
+        sort: true,
       },
-    ],
-    [inputLabel]
-  );
+      {
+        text: "Name",
+        dataField: "name",
+        sort: true,
+      },
+      {
+        text: "Audience",
+        dataField: "audience",
+        sort: true,
+      },
+    ]
+
+  const defaultSorted = [
+    {
+      dataField: "audience",
+      order: "desc",
+    },
+  ];
 
   return (
     <>
@@ -52,7 +52,14 @@ export default function InterestFinder() {
       />
       <Row>
         <Col>
-          {fetchedData && <DataTable columns={columns} data={mappedFetched} />}
+          {fetchedData && (
+            <DataTable
+              columns={columns}
+              data={mappedFetched}
+              sort={defaultSorted}
+              caption={`Displaying results of: ${inputLabel}`}
+            />
+          )}
         </Col>
       </Row>
     </>
