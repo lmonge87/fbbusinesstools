@@ -1,0 +1,624 @@
+{
+  "AdAccounts": [
+    {
+      "name": "Ad Account 1 - Gamer 1",
+      "id": "act_1783309765255963",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 2 - Gamer 2 (CID40138)",
+      "id": "act_1860540010866271",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 3 - Computer Animation (40202)",
+      "id": "act_1867201500200122",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Computer Animation - Exclusive - CABS (20256)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 4 - Mobile Development (40201, 40327, 40423)",
+      "id": "act_1867201776866761",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Mobile Development - Exclusive - MDVBS (20257)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 6 - Communications - Sports Casting (40195)",
+      "id": "act_1899693966950875",
+      "offConditions": [
+        {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 10 - Medical Billing & Coding (40221)",
+      "id": "act_1899695063617432",
+      "offConditions": [
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "Monday-Thursday: 4am PST/Friday-Sunday: 7am PST",
+        "criteria": {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 11 - Gamer 4 (40192)",
+      "id": "act_1899695140284091",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 13 - Music Degree Spots (40215)",
+      "id": "act_1899694493617489",
+      "offConditions": [
+        {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 15 - Computer Animation - Retargeting (40202)",
+      "id": "act_1899695726950699",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Computer Animation - Exclusive - CABS (20256)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 18 - Graphic Design (40220)",
+      "id": "act_1899695906950681",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Graphic Design - Exclusive - GRDBS (21471)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "6:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 19 - Cybersecurity (40307)",
+      "id": "act_1899695993617339",
+      "offConditions": [
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Daily Allocation Group Cap: Reached"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (21539)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Daily Allocation Group Cap: Reached"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (22150)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Group WordTrap: Lead is OVERCAP"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (21539)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Group WordTrap: Lead is OVERCAP"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (22150)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ]
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 21 - Medical Billing & Coding - (40421, 40210, 40221)",
+      "id": "act_1899696400283965",
+      "offConditions": [
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "Monday-Thursday: 4am PST/Friday-Sunday: 7am PST",
+        "criteria": {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 22 - Mobile Development - CID40423",
+      "id": "act_1899696513617287",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Mobile Development - Exclusive - MDVBS (20257)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 23 - Sportscasting Backup (40195)",
+      "id": "act_1899696626950609",
+      "offConditions": [
+        {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Sportscasting - Exclusive - SPORTS (20269)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 24 - Audio Production (40215)",
+      "id": "act_1899696733617265",
+      "offConditions": [
+        {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "6:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Audio Production (22174)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 25 - Graphic Design - (CID40408)",
+      "id": "act_1899696786950593",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Graphic Design - Exclusive - GRDBS (21471)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "6:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 27 - BACKUP - Ad Account 2 - Gamer 2 (CID40138)",
+      "id": "act_1899696866950585",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 28 - BACKUP - Ad Account 3 - Computer Animiation (40202)",
+      "id": "act_1899696926950579",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Computer Animation - Exclusive - CABS (20256)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 30 - BACKUP - Ad Account 10 - Medical Billing and Coding (40221)",
+      "id": "act_1899697096950562",
+      "offConditions": [
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Group WordTrap: Lead is OVERCAP"
+        }
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Ultimate Medical Academy Online - Medical Billing and Coding - Exclusive (21827)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 31 - BACKUP - Ad Account 11 - Gamer 4 (40192)",
+      "id": "act_1899697163617222",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 33 - BACKUP - Ad Account 15 - Computer Animation - Retargeting (40202)",
+      "id": "act_1899697286950543",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Computer Animation - Exclusive - CABS (20256)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 35 - BACKUP - Ad Account 18 - Graphic Design (40220)",
+      "id": "act_1899697390283866",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Graphic Design - Exclusive - GRDBS (21471)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 36 - BACKUP - Ad Account 19 - Cybersecurity (40307)",
+      "id": "act_1899697450283860",
+      "offConditions": [
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Daily Allocation Group Cap: Reached"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (21539)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Daily Allocation Group Cap: Reached"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (22150)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Group WordTrap: Lead is OVERCAP"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (21539)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ],
+        [
+          {
+            "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+            "Alert": "Group WordTrap: Lead is OVERCAP"
+          },
+          {
+            "School": "Independence University - Exclusive - Clone (22150)",
+            "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+          }
+        ]
+      ],
+      "backOnConditions": {
+        "time": "3:00am PST",
+        "criteria": {
+          "School": "Full Sail University Online - Cloud Technologies - TECH (21877)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        },
+        "goesBackOn": false
+      },
+      "currentStatus": "On",
+      "minimumMatches": 1
+    },
+    {
+      "name": "Ad Account 37 - BACKUP - Ad Account 22 - Mobile Development - CID40423",
+      "id": "act_1899697530283852",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Mobile Development - Exclusive - MDVBS (20257)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 38 - BACKUP - Ad Account 25 - Graphic Design - (CID40408)",
+      "id": "act_1899697610283844",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Graphic Design - Exclusive - GRDBS (21471)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 42 - BACKUP - Ad Account 46 - Gamer 5 (40337)",
+      "id": "act_1899697813617157",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 43 - BACKUP - Ad Account 48 - Gamer 3 (40192)",
+      "id": "act_1899697850283820",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 46 - Gamer 5 (40337)",
+      "id": "act_1899698026950469",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    },
+    {
+      "name": "Ad Account 48 - Gamer 3 (40192)",
+      "id": "act_1899698200283785",
+      "offConditions": [
+        {
+          "School": "Independence University - Exclusive - Clone (21539)",
+          "Alert": "Daily Allocation Group Scheduler Cap: Reached"
+        },
+        {
+          "School": "Full Sail University Online - Exclusive (19926)",
+          "Alert": "Daily Allocation Group Cap: Reached"
+        }
+      ],
+      "backOnConditions": { "goesBackOn": true, "time": "3:00am PST" },
+      "currentStatus": "On",
+      "minimumMatches": 2
+    }
+  ]
+}

@@ -1,5 +1,4 @@
 .App {
-  text-align: center;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -17,6 +16,19 @@ nav.nav-tabs a.nav-link.active {
   background-color: #858a8e;
   color: #242627;
 
+}
+
+.mainLogo {
+  height: 30vh;
+  width: 30vw;
+  position: absolute; 
+  left: 50%; 
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div.mainCardAlerts {
+  background-color : #282c34;
 }
 
 div.react-bootstrap-table {
@@ -51,4 +63,9 @@ table.table tr.editedCell {
 
 table.table tr.savedCell {
   background-color: #28a745;
+}
+
+.cardContainer {
+  max-height: 30vh;
+  overflow: scroll;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import BootstrapTable from "react-bootstrap-table-next";
 
 export default function DataTable(props) {
-  const { columns, data, sort, caption, filter, cellEdit, rowClasses } = props;
+  const { columns, data, sort, caption, filter } = props;
 
 
   return data.length ? (
@@ -15,8 +15,6 @@ export default function DataTable(props) {
       defaultSorted={sort}
       id='tableDark'
       filter={filter}
-      cellEdit={cellEdit}
-      rowClasses={rowClasses}
     />
   ) : null;
 }

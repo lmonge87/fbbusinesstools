@@ -1,19 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
-import { GlobalContext } from "./App.js";
+import { GlobalContext } from "../App.js";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Badge from "react-bootstrap/Badge";
-import ErrorModal from "./components/errorModal.js";
-import InterestFinder from "./tabs/interests.js";
-import ImageFinder from "./tabs/images.js";
-import AssociatedImages from "./tabs/usedImages.js";
-import CampaignFinder from "./tabs/campaigns.js";
+import ErrorModal from "../components/errorModal.js";
+import InterestFinder from "../mainTools/interests.js";
+import ImageFinder from "../mainTools/images.js";
+import AssociatedImages from "../mainTools/usedImages.js";
 import axios from "axios";
 
-export default function FbAPIConnect() {
+export default function FbTools() {
   const [showFBButton, setShowFBButton] = useState(true);
   const [userBusiness, setUserBusiness] = useState(undefined);
   const [businessAdAccounts, setBusinessAdAccounts] = useState(undefined);
@@ -92,7 +91,7 @@ export default function FbAPIConnect() {
     <>
       <Container fluid className="mt-3">
         <Row className='mb-3'>
-          <Col xs={{ span: 4, offset: 8 }}>
+          <Col>
             {showFBButton ? (
               <div
                 className="fb-login-button"
@@ -120,12 +119,6 @@ export default function FbAPIConnect() {
           </Tab>
           <Tab eventKey="used" title="Assets in Use">
             <AssociatedImages
-              accessToken={accessToken}
-              selectOptions={businessAdAccounts}
-            />
-          </Tab>
-          <Tab eventKey="campaigns" title="Campaigns">
-            <CampaignFinder
               accessToken={accessToken}
               selectOptions={businessAdAccounts}
             />
