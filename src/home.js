@@ -11,8 +11,10 @@ export default function Homepage() {
   return (
     <Router>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="/">
+        <Navbar.Brand>
+          <Link to="/">
           <GrFacebook />
+          </Link>
         </Navbar.Brand>
         <Nav className="ml-auto">
             <Link className="nav-link" to="businessTools">Business Tools</Link>
