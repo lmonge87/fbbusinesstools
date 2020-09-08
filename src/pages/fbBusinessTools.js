@@ -12,8 +12,8 @@ import ImageFinder from "../mainTools/images.js";
 import AssociatedImages from "../mainTools/usedImages.js";
 import axios from "axios";
 
-export default function FbTools() {
-  const [showFBButton, setShowFBButton] = useState(true);
+export default function FbTools(props) {
+  const{ currentLocation } = props
   const [userBusiness, setUserBusiness] = useState(undefined);
   const [businessAdAccounts, setBusinessAdAccounts] = useState(undefined);
   const { error, token } = useContext(GlobalContext);
@@ -33,13 +33,11 @@ export default function FbTools() {
 
       window.FB.getLoginStatus((response) => {
         if (response.status !== "connected") {
-          setShowFBButton(true);
           window.FB.XFBML.parse();
         } else {
-          setShowFBButton(false);
           setAccessToken(response.authResponse.accessToken);
         }
-      });
+      },true);
     };
 
     (function (d, s, id) {
@@ -53,7 +51,7 @@ export default function FbTools() {
       js.src = "https://connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     })(document, "script", "facebook-jssdk");
-  }, [setAccessToken]);
+  }, [currentLocation, setAccessToken]);
 
   useEffect(() => {
     accessToken &&
@@ -92,7 +90,7 @@ export default function FbTools() {
       <Container fluid className="mt-3">
         <Row className='mb-3'>
           <Col>
-            {showFBButton ? (
+            {!accessToken ? (
               <div
                 className="fb-login-button"
                 data-size="small"

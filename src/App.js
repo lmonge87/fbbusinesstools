@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { HashRouter as Router,} from 'react-router-dom'
 import Homepage from "./home.js";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,7 +23,9 @@ function App() {
   return (
     <Provider>
       <div className="App">
+        <Router>
         <Homepage />
+        </Router>
       </div>
     </Provider>
   );
