@@ -66,6 +66,6 @@ table.table tr.savedCell {
 }
 
 .cardContainer {
-  max-height: 30vh;
+  max-height: 50vh;
   overflow: scroll;
 }
