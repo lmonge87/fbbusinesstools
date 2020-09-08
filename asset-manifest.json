@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/FbAPIConnect/static/css/main.9380dcc0.chunk.css",
+    "main.css": "/FbAPIConnect/static/css/main.e818d4d6.chunk.css",
     "main.js": "/FbAPIConnect/static/js/main.f22f88f0.chunk.js",
     "main.js.map": "/FbAPIConnect/static/js/main.f22f88f0.chunk.js.map",
     "runtime-main.js": "/FbAPIConnect/static/js/runtime-main.7aae5cf9.js",
@@ -9,17 +9,17 @@
     "static/js/2.198ff395.chunk.js": "/FbAPIConnect/static/js/2.198ff395.chunk.js",
     "static/js/2.198ff395.chunk.js.map": "/FbAPIConnect/static/js/2.198ff395.chunk.js.map",
     "index.html": "/FbAPIConnect/index.html",
-    "precache-manifest.9f182e6430e4fa15b7660f784f4c860b.js": "/FbAPIConnect/precache-manifest.9f182e6430e4fa15b7660f784f4c860b.js",
+    "precache-manifest.6e7a72d638c1ad8153d63b0c0f8947c6.js": "/FbAPIConnect/precache-manifest.6e7a72d638c1ad8153d63b0c0f8947c6.js",
     "service-worker.js": "/FbAPIConnect/service-worker.js",
     "static/css/2.9809d50e.chunk.css.map": "/FbAPIConnect/static/css/2.9809d50e.chunk.css.map",
-    "static/css/main.9380dcc0.chunk.css.map": "/FbAPIConnect/static/css/main.9380dcc0.chunk.css.map",
+    "static/css/main.e818d4d6.chunk.css.map": "/FbAPIConnect/static/css/main.e818d4d6.chunk.css.map",
     "static/js/2.198ff395.chunk.js.LICENSE.txt": "/FbAPIConnect/static/js/2.198ff395.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7aae5cf9.js",
     "static/css/2.9809d50e.chunk.css",
     "static/js/2.198ff395.chunk.js",
-    "static/css/main.9380dcc0.chunk.css",
+    "static/css/main.e818d4d6.chunk.css",
     "static/js/main.f22f88f0.chunk.js"
   ]
 }
