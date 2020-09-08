@@ -37,7 +37,7 @@ export default function FbTools(props) {
         } else {
           setAccessToken(response.authResponse.accessToken);
         }
-      },true);
+      });
     };
 
     (function (d, s, id) {
