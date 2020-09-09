@@ -157,13 +157,13 @@ export default function AlertManager() {
 
   return (
     <Card className="mainCardAlerts" text="white">
-      <Card.Header>Alert Manager</Card.Header>
+      <Card.Header as="h4">Alert Manager</Card.Header>
       <Card.Body>
         <Row className="mt-3">
           <Col xs="12">
             <Form onSubmit={handleSubmit}>
               <Form.Row className="align-items-center">
-                <Col md="4" xs="auto">
+                <Col md="3" xs="auto">
                   <Form.Label srOnly />
                   <Form.Control
                     className="mb-2"
@@ -182,7 +182,7 @@ export default function AlertManager() {
                       ))}
                   </Form.Control>
                 </Col>
-                <Col md="4" xs="auto">
+                <Col md="3" xs="auto">
                   <Form.Control
                     className="mb-2"
                     as="select"
@@ -225,10 +225,10 @@ export default function AlertManager() {
         </Row>
         <hr />
         <Row>
-          <Col>
+          <Col lg="6" xs="12">
             <Card bg="dark" text="white">
-              <Card.Header>Alerts</Card.Header>
-              <Card.Body className="cardContainer">
+              <Card.Header as="h5">Alerts</Card.Header>
+              <Card.Body>
                 <ListGroup>
                   {alertList &&
                     alertList.map((i, index) => (
@@ -259,15 +259,12 @@ export default function AlertManager() {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-        <hr />
-        <Row>
-          <Col>
+          <Col lg="6" xs="12">
             <Card bg="dark" text="white">
-              <Card.Header>Affected Accounts</Card.Header>
-              <Card.Body className="cardContainer">
+              <Card.Header as="h5">Affected Accounts</Card.Header>
+              <Card.Body>
                 {filteredAccounts &&
-                  filteredAccounts.map((i, index) => (
+                  filteredAccounts.map((i) => (
                     <Card
                       bg={
                         checkedAccounts.includes(i.id) ? "success" : "secondary"

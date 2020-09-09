@@ -64,8 +64,3 @@ table.table tr.editedCell {
 table.table tr.savedCell {
   background-color: #28a745;
 }
-
-.cardContainer {
-  max-height: 50vh;
-  overflow: scroll;
-}
