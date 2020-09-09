@@ -130,6 +130,7 @@ export default function AlertManager() {
   const handleClear = () => {
     setAlertList([]);
     setAdAccounts(accountsDeepCopy);
+    setCheckedAccounts([])
   };
 
   const handleCheck = (id) => {
@@ -147,7 +148,10 @@ export default function AlertManager() {
   };
 
   useEffect(() => {
-    if (alertList.length === 0) setAdAccounts(accountsDeepCopy);
+    if (alertList.length === 0) {
+      setAdAccounts(accountsDeepCopy) 
+      setCheckedAccounts([])};
+
     // eslint-disable-next-line
   }, [alertList]);
 
