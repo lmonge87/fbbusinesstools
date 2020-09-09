@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74e48041f756ae9e514de6549a063ebb",
+    "revision": "96aa5fe517efc09a15e09bbb8eb0de06",
     "url": "/fbbusinesstools/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fbbusinesstools/static/css/2.9809d50e.chunk.css"
   },
   {
-    "revision": "469d74bcc21b4bd8c102",
+    "revision": "4c3089957bf638193e48",
     "url": "/fbbusinesstools/static/css/main.dc30f5b5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/fbbusinesstools/static/js/2.3b5e5f86.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "469d74bcc21b4bd8c102",
-    "url": "/fbbusinesstools/static/js/main.86707fb0.chunk.js"
+    "revision": "4c3089957bf638193e48",
+    "url": "/fbbusinesstools/static/js/main.110ee1a4.chunk.js"
   },
   {
     "revision": "a3e4a495f671c982f61b",
