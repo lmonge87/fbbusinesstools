@@ -233,7 +233,7 @@ export default function AlertManager() {
                   {alertList &&
                     alertList.map((i, index) => (
                       <ListGroup.Item
-                        className="d-flex"
+                        className="d-flex align-items-center"
                         variant="dark"
                         key={index}
                       >
@@ -249,7 +249,6 @@ export default function AlertManager() {
                         <Button
                           variant="outline-danger"
                           onClick={() => handleAlertDelete(i)}
-                          className="text-right, align-top"
                         >
                           <FaRegTrashAlt />
                         </Button>
