@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/fbbusinesstools/precache-manifest.b1d70c8b5ed632a1848820c6fe2a4f15.js"
+  "/fbbusinesstools/precache-manifest.52deea732ec2a415b424d026a8fa55d5.js"
 );
 
 self.addEventListener('message', (event) => {
