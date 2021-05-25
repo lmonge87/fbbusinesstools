@@ -1,0 +1,27 @@
+export const GUTTERS = {
+  LETTER_SPACING: '0.00938em',
+  // padding
+  PADDING_0: '0px',
+  PADDING_1: '5px',
+  PADDING_2: '10px',
+  PADDING_3: '15px',
+  PADDING_4: '20px',
+  PADDING_5: '25px',
+  PADDING_6: '30px',
+  PADDING_7: '35px',
+  PADDING_10: '50px',
+  PADDING_20: '100px',
+  // marging
+  MARGIN_0: '0px',
+  MARGIN_1: '8px',
+  MARGIN_2: '16px',
+  MARGIN_3: '24px',
+  MARGIN_4: '32px',
+  MARGIN_5: '40px',
+  MARGIN_6: '48px',
+  MARGIN_8: '64px',
+  MARGIN_10: '80px',
+  MARGIN_12: '96px',
+  MARGIN_13: '104px',
+  MARGIN_21: '168px',
+};

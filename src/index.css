@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+div.mainCardAlerts {
+  background-color: #282c34;
+}
+
+div.react-bootstrap-table {
+  overflow-x: auto;
+}
+
+div.react-bootstrap-table table.table {
+  table-layout: auto;
+}
+
+table#tableDark {
+  background-color: #343a40;
+  color: #fff;
+  border: 1px solid #454d55;
+}
+
+tr:nth-of-type(odd) {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+.table thead th {
+  border: 1px solid #454d55;
+}
+
+table.table-bordered td,
+.table-bordered th {
+  border: 1px solid #454d55;
+}
+
+table.table tr.editedCell {
+  background-color: #ffc107;
+}
+
+table.table tr.savedCell {
+  background-color: #28a745;
+}
