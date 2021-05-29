@@ -4,7 +4,7 @@ export const useStyles = createUseStyles(
   ({
     COLORS: { MODAL_BACKGROUND_COLOR, WHITE_COLOR, DANGER_RED },
     FONT_SIZES: { TEXT_BODY_5 },
-    GUTTERS: { PADDING_1 },
+    GUTTERS: { PADDING_1, MARGIN_2 },
   }) => ({
     root: {
       '& .modal-content': {
@@ -14,13 +14,13 @@ export const useStyles = createUseStyles(
         },
       },
     },
-    multiSelectRoot: {
+    multiSelectAlertsRoot: {
       width: '100%',
-      '& .selected-alerts-group': {
+      '& .selected-items-group': {
         fontSize: TEXT_BODY_5,
         marginBottom: '2px',
         borderRadius: '5px',
-        '& .selected-alert': {
+        '& .selected-item': {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
@@ -30,6 +30,13 @@ export const useStyles = createUseStyles(
             cursor: 'pointer',
           },
         },
+      },
+    },
+    startConfigSelectorRoot: {
+      marginBottom: MARGIN_2,
+      '& .controls-row': {
+        display: 'flex',
+        alignItems: 'center',
       },
     },
   })

@@ -3,17 +3,17 @@ import { createUseStyles } from 'react-jss';
 export const useStyles = createUseStyles(
   ({ FONT_SIZES: { TEXT_BODY_4, TEXT_BODY_5 } }) => ({
     root: {
-      '& .alert-details': {
+      '& .campaign-details': {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
         fontSize: TEXT_BODY_5,
         padding: '.25rem .5rem',
-        '& .start-time-config': {
-          marginTop: 0,
-        },
       },
-      '& .accordion-card': {
+      '& .alert-list-item': {
+        padding: '.25rem 1rem',
+      },
+      '& .flex-column': {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',

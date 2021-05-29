@@ -4,7 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import AccountSettingsModal from './components/accounts-settings-modal/accounts-settings-modal';
+import { dayOptions, hourOptions } from './utils/account-settings.constants';
+import { formatTime, formatDays } from './utils/account-settings.helper';
 import { useStyles } from './accounts-settings.styles';
 import {
   FaRegTrashAlt,
@@ -26,7 +30,7 @@ const AccountSettings = ({
     fbId: '',
     mainPauseAlerts: [],
     secondaryPauseAlerts: [],
-    startTime: '',
+    startTimeConfig: [],
     startException: null,
   };
 
@@ -51,6 +55,13 @@ const AccountSettings = ({
     });
   };
 
+  const updateStartTimeConfig = (startTimeConfigs) => {
+    setAccountState({
+      ...accountState,
+      startTimeConfig: startTimeConfigs,
+    });
+  };
+
   const getIds = (arr) => {
     return arr.map((arrItem) => arrItem._id);
   };
@@ -63,7 +74,7 @@ const AccountSettings = ({
       fbId: acct.fbId,
       mainPauseAlerts: getIds(acct.mainPauseAlerts),
       secondaryPauseAlerts: getIds(acct.secondaryPauseAlerts),
-      startTime: acct.startTime,
+      startTimeConfig: acct.startTimeConfig,
       startException: acct.startException,
     });
     setAddModalState(true);
@@ -113,7 +124,7 @@ const AccountSettings = ({
                     <span>Account Name: {acct.name}</span>
                   </Accordion.Toggle>
                   <Accordion.Collapse eventKey={index + 1}>
-                    <Card.Body>
+                    <Card.Body className='accordion-card'>
                       <span>
                         FB Account ID: <strong>{acct.fbId}</strong>
                       </span>
@@ -151,9 +162,34 @@ const AccountSettings = ({
                           </span>
                         )}
                       </ListGroup>
-                      <span>
-                        Restart Time: <strong>{acct.startTime}</strong>
-                      </span>
+                      <span>Start Time Configs:</span>
+                      <ListGroup variant='flush'>
+                        {acct.startTimeConfig.map((timeConfig, index) => (
+                          <ListGroup.Item
+                            variant='dark'
+                            className={'alert-details'}
+                            key={`selection-${index}`}
+                          >
+                            <Row className='start-time-config'>
+                              <Col xs='8'>
+                                <span>
+                                  Day(s):{' '}
+                                  {formatDays(
+                                    timeConfig.day,
+                                    dayOptions
+                                  ).toString()}
+                                </span>
+                              </Col>
+                              <Col xs='4'>
+                                <span>
+                                  Hour:{' '}
+                                  {formatTime(timeConfig.time, hourOptions)}
+                                </span>
+                              </Col>
+                            </Row>
+                          </ListGroup.Item>
+                        ))}
+                      </ListGroup>
                       <span>Restart Exception:</span>
                       {acct.startException ? (
                         <ListGroup variant='flush'>
@@ -224,6 +260,7 @@ const AccountSettings = ({
           setAccountState={setAccountState}
           updateAccountPrimaryAlerts={updateAccountPrimaryAlerts}
           updateAccountSecondaryAlerts={updateAccountSecondaryAlerts}
+          updateStartTimeConfig={updateStartTimeConfig}
         />
       )}
     </div>

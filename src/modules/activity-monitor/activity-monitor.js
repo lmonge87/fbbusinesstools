@@ -4,12 +4,16 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
+import Accordion from 'react-bootstrap/Accordion';
 import { GrRefresh } from 'react-icons/gr';
 import axios from 'axios';
+import { useStyles } from './activity-monitor.styles';
 
-export default function AlertManager() {
+export default function ActivityMonitor() {
   const [activeAlerts, setActiveAlerts] = useState([]);
   const [activeAccounts, setActiveAccounts] = useState([]);
+
+  const { root } = useStyles();
 
   const getAlertData = async () => {
     const alertData = await axios.get('api/activeAlerts');
@@ -21,7 +25,7 @@ export default function AlertManager() {
     setActiveAccounts(accountData.data);
   };
 
-  const handlePullMessages = () => {
+  const handleRefreshActivity = () => {
     getAlertData();
     getAccountData();
   };
@@ -33,77 +37,118 @@ export default function AlertManager() {
   }, []);
 
   return (
-    <Card bg={'dark'} text='white'>
-      <Card.Header>
-        <Row className='d-flex justify-content-between'>
-          <Col xs='auto'>
-            <h4>Activity Monitor</h4>
-          </Col>
-          <Col xs='auto'>
-            <Row>
-              <Col className='px-1'>
-                <Button
-                  onClick={handlePullMessages}
-                  className='mb-2'
-                  variant='info'
-                >
-                  <GrRefresh />
-                </Button>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Card.Header>
-      <Card.Body>
-        <Row>
-          <Col lg='6' xs='12'>
-            <Card bg='dark' text='white'>
-              <Card.Header as='h5'>Alerts Added</Card.Header>
-              <Card.Body>
-                <ListGroup>
+    <div className={root}>
+      <Card bg={'dark'} text='white'>
+        <Card.Header>
+          <Row className='d-flex justify-content-between'>
+            <Col xs='auto'>
+              <h4>Activity Monitor</h4>
+            </Col>
+            <Col xs='auto'>
+              <Row>
+                <Col className='px-1'>
+                  <Button
+                    onClick={handleRefreshActivity}
+                    className='mb-2'
+                    variant='info'
+                  >
+                    <GrRefresh />
+                  </Button>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Card.Header>
+        <Card.Body>
+          <Row>
+            <Col lg='6' xs='12'>
+              <Card bg='dark' text='white'>
+                <Card.Header as='h5'>Alerts Recieved</Card.Header>
+                <Card.Body>
                   {activeAlerts &&
                     activeAlerts.map((i) => (
-                      <ListGroup.Item
-                        className='d-flex align-items-center'
-                        variant='dark'
+                      <ListGroup
+                        className='d-flex'
+                        variant='light'
+                        text='dark'
                         key={i._id}
                       >
-                        <div className='flex-grow-1'>
-                          <Card.Subtitle>{i.schoolID}</Card.Subtitle>
-                          <Card.Text>{i.reason}</Card.Text>
-                        </div>
-                      </ListGroup.Item>
+                        <ListGroup.Item
+                          variant='light'
+                          className='alert-list-item flex-column'
+                        >
+                          <span>
+                            <strong>School ID: </strong>
+                            {i.schoolID}
+                          </span>
+                          <span>
+                            <strong>Reason: </strong>
+                            {i.reason}
+                          </span>
+                        </ListGroup.Item>
+                      </ListGroup>
                     ))}
-                </ListGroup>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col lg='6' xs='12'>
-            <Card bg='dark' text='white'>
-              <Card.Header as='h5'>Pausing Accounts</Card.Header>
-              <Card.Body>
-                <ListGroup>
-                  {activeAccounts &&
-                    activeAccounts.map((i) => (
-                      <ListGroup.Item
-                        className='d-flex align-items-center'
-                        variant='dark'
-                        key={i._id}
-                      >
-                        <div className='flex-grow-1'>
-                          <Card.Subtitle>{i.name}</Card.Subtitle>
-                          <Card.Text>
-                            <span>{i.fbId}</span>
-                          </Card.Text>
-                        </div>
-                      </ListGroup.Item>
-                    ))}
-                </ListGroup>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Card.Body>
-    </Card>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col lg='6' xs='12'>
+              <Card bg='dark' text='white'>
+                <Card.Header as='h5'>Pausing Accounts</Card.Header>
+                <Card.Body>
+                  <Accordion>
+                    {activeAccounts &&
+                      activeAccounts.map((acct, index) => (
+                        <Card bg='light' text='dark' key={`account-${index}`}>
+                          <Accordion.Toggle
+                            as={Card.Header}
+                            className='accordion-header'
+                            eventKey={index + 1}
+                          >
+                            <Card.Subtitle>
+                              Account Name: {acct.name}
+                            </Card.Subtitle>
+                          </Accordion.Toggle>
+                          <Accordion.Collapse eventKey={index + 1}>
+                            <Card.Body className='flex-column'>
+                              <span>
+                                FB Account ID: <strong>{acct.fbId}</strong>
+                              </span>
+                              <span>Campaigns:</span>
+                              <ListGroup variant='flush'>
+                                {acct.campaigns.map((campaign, index) => (
+                                  <ListGroup.Item
+                                    className={'campaign-details'}
+                                    variant='dark'
+                                    key={`campaign-${index}`}
+                                  >
+                                    <span>Campaign Name: {campaign.name}</span>
+                                    <span>ID: {campaign.id}</span>
+                                    <span>
+                                      Current Status: {campaign.status}
+                                    </span>
+                                    <span>
+                                      New Status: {campaign.newStatus}
+                                    </span>
+                                    <span>
+                                      Update Status: {campaign.updateStatus}
+                                    </span>
+                                    <span>
+                                      Update Time: {campaign.updateTime || '-'}
+                                    </span>
+                                  </ListGroup.Item>
+                                ))}
+                              </ListGroup>
+                            </Card.Body>
+                          </Accordion.Collapse>
+                        </Card>
+                      ))}
+                  </Accordion>
+                </Card.Body>
+              </Card>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }

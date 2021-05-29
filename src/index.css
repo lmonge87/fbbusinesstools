@@ -12,10 +12,6 @@ code {
     monospace;
 }
 
-div.mainCardAlerts {
-  background-color: #282c34;
-}
-
 div.react-bootstrap-table {
   overflow-x: auto;
 }

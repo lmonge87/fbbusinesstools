@@ -61,7 +61,7 @@ const Settings = () => {
 
   return (
     <div className={root}>
-      <Card className='mainCardAlerts' bg='dark' text='white'>
+      <Card bg='dark' text='white'>
         <Card.Header as='h4'>Settings</Card.Header>
         <Card.Body>
           <Row className='mt-3'>
